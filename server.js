@@ -9,6 +9,7 @@ const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
 
+
 app.use(express.static("public"));
 app.use(express.json());
 
@@ -32,6 +33,9 @@ app.use("/api/files",require("./routes/files"));
 app.use("/files",require("./routes/show"));
 app.use("/files/download",require("./routes/download"));
 
+app.get('/', function(req, res) {
+    res.sendFile(__dirname + '/index.html');
+  });
 
 app.listen(PORT , ()=>{
     console.log(`Listeneing on PORT: ${PORT}`);

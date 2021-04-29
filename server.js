@@ -16,10 +16,8 @@ const connectDB = require("./config/db");
 connectDB();
 
 
-//Specifying from which all requests cors should be allowed
-
 const corsOptions = {
-    origin:process.env.ALLOW_CLIENTS.split(",")
+    origin:process.env.ALLOW_CLIENTS.split(',')
 
 }
 
